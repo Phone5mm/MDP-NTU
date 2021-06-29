@@ -74,8 +74,7 @@ add_vertex(1)
 add_vertex(2)
 add_vertex(3)
 add_vertex(4)
-# Add the edges between the vertices by specifying
-# the from and to vertex along with the edge weights.
+# Add the edges between the vertices with the edge weights.
 add_edge(0, 1, round(distance(A,B),2))
 add_edge(0, 2, round(distance(A,C),2))
 add_edge(0, 3, round(distance(A,D),2))
@@ -89,9 +88,19 @@ add_edge(3, 4, round(distance(D,E),2))
 
 print("Internal representation: ", graph)
 
-###########move to first_vertex obstacle_list[first_vertex]
-
 # Update the current vertex
 current_vertex = first_vertex
-visited_vertex[current_vertex] = 1
-
+shortest_path=[100,100,100,100,100]
+for i in range(0, 5):
+    shortest_path[i] = current_vertex
+    minimum = 200
+    min_index = 0
+    visited_vertex[current_vertex] = 1
+    for j in range (0, 5):
+        if graph[current_vertex][j]<minimum and current_vertex!=j:
+            if visited_vertex[j] == 0 :
+                minimum = graph[current_vertex][j]
+                min_index = j
+    current_vertex = min_index
+print(shortest_path)
+        
