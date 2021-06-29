@@ -51,7 +51,7 @@ def print_graph():
         " edge weight: ", graph[i][j])
 
 
-#Five obstacles and origin 
+#Five obstacles and origin get from android
 origin = [0,0]
 A = [3,5]
 B = [3,9]
