@@ -52,17 +52,18 @@ def print_graph():
 
 
 #Five obstacles and origin get from android
+obstacle_android = [[3,5,0],[3,9,0],[6,3,0],[15,10,0],[10,5,0]]
 origin = [0,0]
-A = [3,5]
-B = [3,9]
-C = [6,3]
-D = [15,10]
-E = [10,5] 
+A = [obstacle_android[0][0],obstacle_android[0][1]]
+B = [obstacle_android[1][0],obstacle_android[1][1]]
+C = [obstacle_android[2][0],obstacle_android[2][1]]
+D = [obstacle_android[3][0],obstacle_android[3][1]]
+E = [obstacle_android[4][0],obstacle_android[4][1]]
 obstacle_list = [A,B,C,D,E]
 visited_vertex = [0,0,0,0,0]
 obstacle_distance = [distance(origin,A),distance(origin,B),distance(origin,C),distance(origin,D),distance(origin,E)]
 first_vertex = obstacle_distance.index(min(obstacle_distance))
-print(first_vertex)
+#print(first_vertex)
 # stores the vertices in the graph
 vertices = []
 # stores the number of vertices in the graph
@@ -86,7 +87,7 @@ add_edge(2, 3, round(distance(C,D),2))
 add_edge(2, 4, round(distance(C,E),2))
 add_edge(3, 4, round(distance(D,E),2))
 
-print("Internal representation: ", graph)
+#print("Internal representation: ", graph)
 
 # Update the current vertex
 current_vertex = first_vertex
@@ -102,5 +103,8 @@ for i in range(0, 5):
                 minimum = graph[current_vertex][j]
                 min_index = j
     current_vertex = min_index
-print(shortest_path)
+
+for i in range(len(shortest_path)):
+    print(obstacle_android[shortest_path[i]])
+
         
