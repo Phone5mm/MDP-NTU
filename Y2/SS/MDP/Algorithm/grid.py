@@ -1,6 +1,7 @@
 import pygame
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+RED = (255,0,0)
 WINDOW_HEIGHT = 400
 WINDOW_WIDTH = 400
 
@@ -32,4 +33,5 @@ def drawGrid():
             pygame.draw.rect(SCREEN, BLACK, rect, 1)
             
 main()
+
 

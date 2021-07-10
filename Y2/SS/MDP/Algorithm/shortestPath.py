@@ -1,3 +1,9 @@
+# stores the vertices in the graph
+vertices = []
+# stores the number of vertices in the graph
+vertices_no = 0
+graph = []
+
 #Calculate Distance
 def distance(p1, p2):
     return ((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2) ** 0.5
@@ -47,8 +53,6 @@ def print_graph():
         print(vertices[i], " -> ", vertices[j], \
         " edge weight: ", graph[i][j])
 
-
-
 def shortestPath(obstacle_android):
     obstacle_number = len(obstacle_android)
     print('No. of obstacles:',obstacle_number)
@@ -56,14 +60,15 @@ def shortestPath(obstacle_android):
     obstacle_list = []
     visited_vertex = [0] * obstacle_number
     obstacle_distance = []
+    list = []
+
     for i in range(0, obstacle_number):
         obstacle_list.append ([obstacle_android[i][0],obstacle_android[i][1]])
+
     for i in range(0, obstacle_number):
         obstacle_distance.append(distance(origin,obstacle_list[i]))
         add_vertex(i) # Add vertices to the graph
     first_vertex = obstacle_distance.index(min(obstacle_distance))
-    
-    
     
     # Add the edges between the vertices with the edge weights.
     for i in range(0, obstacle_number-1):
@@ -84,18 +89,10 @@ def shortestPath(obstacle_android):
                     minimum = graph[current_vertex][j]
                     min_index = j
         current_vertex = min_index
-    list = []
+
     for i in range(len(shortest_path)):
         list.append(obstacle_android[shortest_path[i]])
     return list
+
+
         
-if __name__ == "__main__":
-    # stores the vertices in the graph
-    vertices = []
-    # stores the number of vertices in the graph
-    vertices_no = 0
-    graph = []
-    #Five obstacles and origin get from android
-    obstacle_android = [[30,50,0],[30,90,0],[60,30,0],[150,100,0],[100,50,0]]
-    hamiltonianPath = shortestPath(obstacle_android)
-    print(hamiltonianPath)
