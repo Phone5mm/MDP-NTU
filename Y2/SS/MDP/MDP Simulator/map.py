@@ -1,4 +1,5 @@
 import logging
+from tkinter.constants import FALSE
 
 import config
 import numpy as np
@@ -149,6 +150,7 @@ class Map:
             logging.debug(str(y) + ", " + str(x))
 
     def is_obstacle(self, x, y, sim=True, use_confidence=False):
+
         if sim:
             return map_sim[y][x] == 1
 

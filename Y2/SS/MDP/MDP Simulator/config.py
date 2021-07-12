@@ -1,6 +1,6 @@
 map_size = dict(
     height=20,
-    width=15
+    width=18
 )
 
 map_cells = [[None for _ in range(map_size['width'])] for _ in range(map_size['height'])]
@@ -27,6 +27,7 @@ map_cells = [[None for _ in range(map_size['width'])] for _ in range(map_size['h
 
 image_paths = dict(
     blue='images/blue.gif',
+    orange='images/orange.gif',
     gray='images/gray.gif',
     green='images/green.gif',
     light_blue='images/light_blue.gif',

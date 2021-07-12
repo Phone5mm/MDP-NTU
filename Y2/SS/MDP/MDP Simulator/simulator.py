@@ -17,9 +17,10 @@ from hamiltonianPath import *
 #W = 1
 
 robot = [0,0,0.5]
-obstacle_android = [[5,4,1],[1,10,0],[6,15,1],[13,10,1],[4,19,1.5]]
+obstacle_android = [[1,8,0],[5,4,1],[0,18,0],[13,10,1],[6,15,1]]
 hamiltonianPath = shortestPath(obstacle_android)
-print(hamiltonianPath) #hamiltonian Path
+print('Obstacle List: ',obstacle_android)
+print('Hamiltonian Path: ',hamiltonianPath) #hamiltonian Path
 
 end = hamiltonianPath 
 for i in range(0, len(hamiltonianPath)): 
@@ -33,7 +34,7 @@ class Simulator:
         self.robot_simulation = True
 
         self.root = Tk()
-        self.root.title("MDP Simulation")
+        self.root.title("Robot Car Simulator")
         self.root.resizable(False, False)
         self.job = None
 
@@ -63,14 +64,14 @@ class Simulator:
                 self.robot_w[i].append(config.robot_grid['west'][i][j])
         
         t = Toplevel(self.root)
-        t.title("Control Panel")
+        t.title("Controller")
         t.geometry('+610+0')
         t.resizable(False, False)
 
         self.canvas = Canvas(self.root, width=40 * config.map_size['width'], height=40 * config.map_size['height'])
         self.canvas.pack()
 
-        self.control_panel = ttk.Frame(t, padding=(10, 10))
+        self.control_panel = ttk.Frame(t, padding=(20, 20))
         self.control_panel.grid(row=0, column=1, sticky="snew")
 
         control_pane_window = ttk.Panedwindow(self.control_panel, orient=VERTICAL)
@@ -89,84 +90,88 @@ class Simulator:
         self.goal_y = StringVar()
         self.ip_addr = StringVar()
 
-        explore_button = ttk.Button(action_pane, text='Explore', command=self.explore, width=30)
-        explore_button.grid(column=0, row=0, sticky="ew")
-        fastest_path_button = ttk.Button(action_pane, text='Fastest Path', command=self.findFP)
-        fastest_path_button.grid(column=0, row=1, sticky="ew")
+        #explore_button = ttk.Button(action_pane, text='Explore', command=self.explore, width=20)
+        #explore_button.grid(column=0, row=0, sticky="ew",padx=5, pady=10)
+        algo_label = ttk.Label(action_pane, text="Algorithm: ")
+        algo_label.grid(column=0, row=0, sticky="ew",padx=0, pady=0)
+        start_button = ttk.Button(action_pane, text='Hamiltonian Path', command=self.start, width=30)
+        start_button.grid(column=0, row=1, sticky="ew",padx=5, pady=20)
+
+        #fastest_path_button = ttk.Button(action_pane, text='Fastest Path', command=self.findFP)
+        #fastest_path_button.grid(column=0, row=1, sticky="ew")
+        
         move_button = ttk.Button(action_pane, text='Move', command=self.move)
         move_button.grid(column=0, row=5, sticky="ew")
         left_button = ttk.Button(action_pane, text='Left', command=self.left)
         left_button.grid(column=0, row=3, sticky="ew")
         right_button = ttk.Button(action_pane, text='Right', command=self.right)
         right_button.grid(column=0, row=4, sticky="ew")
-        load_button = ttk.Button(action_pane, text='Load Map', command=self.load)
-        load_button.grid(column=0, row=6, sticky="ew")
-        reset_button = ttk.Button(action_pane, text='Reset', command=self.reset)
-        reset_button.grid(column=0, row=7, sticky="ew")
-        start_button = ttk.Button(action_pane, text='Hamiltonian Path', command=self.start)
-        start_button.grid(column=0, row=2, sticky="ew")
+        #load_button = ttk.Button(action_pane, text='Load Map', command=self.load)
+        #load_button.grid(column=0, row=6, sticky="ew")
+        #reset_button = ttk.Button(action_pane, text='Reset', command=self.reset)
+        #reset_button.grid(column=0, row=7, sticky="ew")
+        
+        #self.text_area = scrolledtext.ScrolledText(control_pane_window, wrap=WORD, width=35, height=10)
+        #self.text_area.grid(row=2, column=0, pady=(20, 10))
 
-        self.text_area = scrolledtext.ScrolledText(control_pane_window, wrap=WORD, width=35, height=10)
-        self.text_area.grid(row=2, column=0, pady=(20, 10))
+        #step_per_second_label = ttk.Label(parameter_pane, text="Steps Per Second:")
+        #step_per_second_label.grid(column=0, row=0, sticky="ew")
+        #step_per_second_entry = ttk.Entry(parameter_pane, textvariable=self.steps_per_second, width=33)
+        #step_per_second_entry.grid(column=0, row=1, pady=(0, 10), sticky="ew")
 
-        step_per_second_label = ttk.Label(parameter_pane, text="Steps Per Second:")
-        step_per_second_label.grid(column=0, row=0, sticky="ew")
-        step_per_second_entry = ttk.Entry(parameter_pane, textvariable=self.steps_per_second, width=33)
-        step_per_second_entry.grid(column=0, row=1, pady=(0, 10), sticky="ew")
+        #coverage_figure_label = ttk.Label(parameter_pane, text="Coverage Figure(%):")
+        #coverage_figure_label.grid(column=0, row=2, sticky="ew")
+        #coverage_figure_entry = ttk.Entry(parameter_pane, textvariable=self.coverage_figure)
+        #coverage_figure_entry.grid(column=0, row=3, pady=(0, 10), sticky="ew")
 
-        coverage_figure_label = ttk.Label(parameter_pane, text="Coverage Figure(%):")
-        coverage_figure_label.grid(column=0, row=2, sticky="ew")
-        coverage_figure_entry = ttk.Entry(parameter_pane, textvariable=self.coverage_figure)
-        coverage_figure_entry.grid(column=0, row=3, pady=(0, 10), sticky="ew")
+        #time_limit_label = ttk.Label(parameter_pane, text="Time Limit(s):")
+        #time_limit_label.grid(column=0, row=4, sticky="ew")
+        #time_limit_entry = ttk.Entry(parameter_pane, textvariable=self.time_limit)
+        #time_limit_entry.grid(column=0, row=5, pady=(0, 10), sticky="ew")
 
-        time_limit_label = ttk.Label(parameter_pane, text="Time Limit(s):")
-        time_limit_label.grid(column=0, row=4, sticky="ew")
-        time_limit_entry = ttk.Entry(parameter_pane, textvariable=self.time_limit)
-        time_limit_entry.grid(column=0, row=5, pady=(0, 10), sticky="ew")
+        #waypoint_label = ttk.Label(parameter_pane, text="Waypoint(x,y):")
+        #waypoint_label.grid(column=0, row=6, sticky="ew")
+        #waypoint_frame = ttk.Frame(parameter_pane)
+        #waypoint_x_entry = ttk.Entry(waypoint_frame, textvariable=self.waypoint_x, width=16)
+        #waypoint_y_entry = ttk.Entry(waypoint_frame, textvariable=self.waypoint_y, width=16)
+        #waypoint_frame.grid(column=0, row=7)
+        #waypoint_x_entry.grid(column=0, row=0, pady=(0, 10), sticky="w")
+        #waypoint_y_entry.grid(column=1, row=0, pady=(0, 10))
 
-        waypoint_label = ttk.Label(parameter_pane, text="Waypoint(x,y):")
-        waypoint_label.grid(column=0, row=6, sticky="ew")
-        waypoint_frame = ttk.Frame(parameter_pane)
-        waypoint_x_entry = ttk.Entry(waypoint_frame, textvariable=self.waypoint_x, width=16)
-        waypoint_y_entry = ttk.Entry(waypoint_frame, textvariable=self.waypoint_y, width=16)
-        waypoint_frame.grid(column=0, row=7)
-        waypoint_x_entry.grid(column=0, row=0, pady=(0, 10), sticky="w")
-        waypoint_y_entry.grid(column=1, row=0, pady=(0, 10))
+        #goal_label = ttk.Label(parameter_pane, text="Goal(x,y):")
+        #goal_label.grid(column=0, row=8, sticky=EW)
+        #goal_frame = ttk.Frame(parameter_pane)
+        #goal_x_entry = ttk.Entry(goal_frame, textvariable=self.goal_x, width=16)
+        #goal_y_entry = ttk.Entry(goal_frame, textvariable=self.goal_y, width=16)
+        #goal_frame.grid(column=0, row=9)
+        #goal_x_entry.grid(column=0, row=0, pady=(0, 10), sticky=W)
+        #goal_y_entry.grid(column=1, row=0, pady=(0, 10))
 
-        goal_label = ttk.Label(parameter_pane, text="Goal(x,y):")
-        goal_label.grid(column=0, row=8, sticky=EW)
-        goal_frame = ttk.Frame(parameter_pane)
-        goal_x_entry = ttk.Entry(goal_frame, textvariable=self.goal_x, width=16)
-        goal_y_entry = ttk.Entry(goal_frame, textvariable=self.goal_y, width=16)
-        goal_frame.grid(column=0, row=9)
-        goal_x_entry.grid(column=0, row=0, pady=(0, 10), sticky=W)
-        goal_y_entry.grid(column=1, row=0, pady=(0, 10))
+        control_label = ttk.Label(action_pane, text="Manual Control: ")
+        control_label.grid(column=0, row=2, sticky="ew")
+        #self.exploration_dropdown = ttk.Combobox(parameter_pane, state="readonly",
+        #                                         values=["Left Wall Hugging", "Left Wall Hugging (Return Home)",
+        #                                                 "Left Wall Hugging (Optimized, Return Home)",
+        #                                                 "Image Recognition", "Image Recognition (Return Home)",
+        #                                                 "Image Recognition (Partial, Return Home)"])
+        #self.exploration_dropdown.current(3)
+        #self.exploration_dropdown.grid(column=0, row=11, pady=(0, 10), sticky=EW)
 
-        exploration_label = ttk.Label(parameter_pane, text="Exploration Algo:")
-        exploration_label.grid(column=0, row=10, sticky=EW)
-        self.exploration_dropdown = ttk.Combobox(parameter_pane, state="readonly",
-                                                 values=["Left Wall Hugging", "Left Wall Hugging (Return Home)",
-                                                         "Left Wall Hugging (Optimized, Return Home)",
-                                                         "Image Recognition", "Image Recognition (Return Home)",
-                                                         "Image Recognition (Partial, Return Home)"])
-        self.exploration_dropdown.current(4)
-        self.exploration_dropdown.grid(column=0, row=11, pady=(0, 10), sticky=EW)
+        #fp_algo_label = ttk.Label(parameter_pane, text="FP Algo:")
+        #fp_algo_label.grid(column=0, row=12, sticky=EW)
+        #self.fp_dropdown = ttk.Combobox(parameter_pane, state="readonly",
+        #                                values=["A* Search", "A* Search (With Diagonals)", "Left Wall Hugging"])
+        #self.fp_dropdown.current(1)
+        #self.fp_dropdown.grid(column=0, row=13, pady=(0, 10), sticky=EW)
 
-        fp_algo_label = ttk.Label(parameter_pane, text="FP Algo:")
-        fp_algo_label.grid(column=0, row=12, sticky=EW)
-        self.fp_dropdown = ttk.Combobox(parameter_pane, state="readonly",
-                                        values=["A* Search", "A* Search (With Diagonals)", "Left Wall Hugging"])
-        self.fp_dropdown.current(1)
-        self.fp_dropdown.grid(column=0, row=13, pady=(0, 10), sticky=EW)
+        #self.ip_addr.set('192.168.20.1')
+        #ip_addr_label = ttk.Label(parameter_pane, text="IP Address:")
+        #ip_addr_label.grid(column=0, row=14, sticky=EW)
+        #ip_addr_entry = ttk.Entry(parameter_pane, textvariable=self.ip_addr)
+        #ip_addr_entry.grid(column=0, row=15, pady=(0, 0), sticky=EW)
 
-        self.ip_addr.set('192.168.20.1')
-        ip_addr_label = ttk.Label(parameter_pane, text="IP Address:")
-        ip_addr_label.grid(column=0, row=14, sticky=EW)
-        ip_addr_entry = ttk.Entry(parameter_pane, textvariable=self.ip_addr)
-        ip_addr_entry.grid(column=0, row=15, pady=(0, 0), sticky=EW)
-
-        self.connect_button = ttk.Button(parameter_pane, text='Connect', command=self.connect)
-        self.connect_button.grid(column=0, row=16, pady=(0, 10), sticky=EW)
+        #self.connect_button = ttk.Button(parameter_pane, text='Connect', command=self.connect)
+        #self.connect_button.grid(column=0, row=16, pady=(0, 10), sticky=EW)
 
         self.coverage_figure.set(100)
         self.time_limit.set(360)
@@ -176,8 +181,8 @@ class Simulator:
         self.goal_x.set(13)
         self.goal_y.set(1)
 
-        self.control_panel.columnconfigure(0, weight=1)
-        self.control_panel.rowconfigure(0, weight=1)
+        #self.control_panel.columnconfigure(0, weight=1)
+        #self.control_panel.rowconfigure(0, weight=1)
 
         self.update_map(full=True)
         self.event_loop()
@@ -220,19 +225,19 @@ class Simulator:
 
     def update_cell(self, x, y):
         # Start & End box
-        #if ((0 <= y <= 2) and (12 <= x <= 14)) or (17 <= y <= 19 and 0 <= x <= 2):
-            #color = 'gold'
-        #else:
-        if map_is_explored[y][x] == 0:
-            if map_sim[y][x] == 0:
-                color = 'gray64'
-            else:
-                color = 'light pink'
+        if x==15:
+            color = 'pink'
         else:
-            if self.map.is_free(x, y, False):
-                color = 'medium sea green'
+            if map_is_explored[y][x] == 0:
+                if map_sim[y][x] == 0:
+                    color = 'pink'
+                else:
+                    color = 'red'
             else:
-                color = 'red4'
+                if self.map.is_free(x, y, False):
+                    color = 'pink'
+                else:
+                    color = 'red'
 
         if not config.map_cells[y][x]:
             config.map_cells[y][x] = self.canvas.create_rectangle(x * 40, y * 40, x * 40 + 40, y * 40 + 40, fill=color)
@@ -310,7 +315,7 @@ class Simulator:
     
     def start(self):
         
-        print(ObstacleID.k)
+        print('----------------------Obstacle ',ObstacleID.k + 1,'----------------------')
         Simulator.moveFinal(robot,end[ObstacleID.k],self)
         ObstacleID.k = ObstacleID.k+1
 
@@ -669,7 +674,6 @@ class Simulator:
                 print('Des is top right of robot')
                 if theta2 == 1:
                     if theta1 == 0.5:
-                        print('Des is top right of robot')
                         Simulator.mov1(robot,end,self)
                     elif theta1 == 0:
                         #turn left
