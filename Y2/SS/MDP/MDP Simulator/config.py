@@ -1,6 +1,6 @@
 map_size = dict(
     height=20,
-    width=18
+    width=20
 )
 
 map_cells = [[None for _ in range(map_size['width'])] for _ in range(map_size['height'])]

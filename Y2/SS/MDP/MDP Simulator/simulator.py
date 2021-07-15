@@ -38,11 +38,11 @@ class Simulator:
         self.root.resizable(False, False)
         self.job = None
 
-        self.map_start_end = PhotoImage(file=config.image_paths['red'])
-        self.map_unexplored = PhotoImage(file=config.image_paths['gray'])
-        self.map_obstacle_unexplored = PhotoImage(file=config.image_paths['blue'])
-        self.map_free = PhotoImage(file=config.image_paths['green'])
-        self.map_obstacle = PhotoImage(file=config.image_paths['pink'])
+        #self.map_start_end = PhotoImage(file=config.image_paths['red'])
+        #self.map_unexplored = PhotoImage(file=config.image_paths['gray'])
+        #self.map_obstacle_unexplored = PhotoImage(file=config.image_paths['blue'])
+        #self.map_free = PhotoImage(file=config.image_paths['green'])
+       # self.map_obstacle = PhotoImage(file=config.image_paths['pink'])
 
         self.handler = Handler(self)
         self.map = self.handler.map
