@@ -17,7 +17,7 @@ from hamiltonianPath import *
 #W = 1
 
 robot = [0,0,0.5]
-obstacle_android = [[1,8,0],[5,4,1],[0,18,0],[13,10,1],[6,15,1]]
+obstacle_android = [[1,8,0],[5,4,1],[0,18,0],[13,10,1.5],[6,15,1]]
 hamiltonianPath = shortestPath(obstacle_android)
 print('Obstacle List: ',obstacle_android)
 print('Hamiltonian Path: ',hamiltonianPath) #hamiltonian Path
@@ -42,8 +42,7 @@ class Simulator:
         #self.map_unexplored = PhotoImage(file=config.image_paths['gray'])
         #self.map_obstacle_unexplored = PhotoImage(file=config.image_paths['blue'])
         #self.map_free = PhotoImage(file=config.image_paths['green'])
-       # self.map_obstacle = PhotoImage(file=config.image_paths['pink'])
-
+        
         self.handler = Handler(self)
         self.map = self.handler.map
         self.core = self.handler.core
