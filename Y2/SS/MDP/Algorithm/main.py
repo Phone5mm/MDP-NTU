@@ -10,3 +10,4 @@ if __name__ == "__main__":
     print(hamiltonianPath) #hamiltonian Path
     for i in range(0, len(hamiltonianPath)): #Path Navigation
         move(robot,hamiltonianPath[i])
+        print('obstacle coordinate: ', hamiltonianPath[i])

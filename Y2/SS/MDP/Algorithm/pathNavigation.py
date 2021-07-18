@@ -1,3 +1,4 @@
+robotSize = 3
 def turnRight(robot):
     #turn right
     if robot[2] == 0:
@@ -260,7 +261,85 @@ def mov16(robot,end):
     turnLeft(robot)
     #go straight for y1 - y2 - 3
     robot[1] = robot[1] +  y1 - y2 - 3
-   
+
+def mov17(robot,end):
+    x1 = robot[0]
+    x2 = end[0]
+    y1 = robot[1]
+    y2 = end[1]
+    theta1 = robot[2]
+    theta2 = end[2]
+    #go straight for x1 - x2 + 5
+    robot[0] = robot[0] + x1 - x2 + 5
+    #turn right
+    turnRight(robot)
+    #go Straight for y2 - y1 - 1
+    robot[1] = robot[1] + y2 - y1 - 1
+    #turn right
+    turnRight(robot)
+
+def mov18(robot,end):
+    x1 = robot[0]
+    x2 = end[0]
+    y1 = robot[1]
+    y2 = end[1]
+    theta1 = robot[2]
+    theta2 = end[2]
+    #go Straight for y2 - y1 - 5
+    robot[1] = robot[1] + y2 - y1 - 5
+
+def mov19(robot,end):
+    x1 = robot[0]
+    x2 = end[0]
+    y1 = robot[1]
+    y2 = end[1]
+    theta1 = robot[2]
+    theta2 = end[2]
+    #go Straight for x2 - x1 + 3
+    robot[0] = robot[0] + x2 - x1 + 3
+    #turn left
+    turnLeft(robot)
+    #go Straight for y2 - y1 - 1
+    robot[1] = robot[1] + y2 - y1 - 1
+    #turn left
+    turnLeft(robot)
+
+def mov20(robot,end):
+    x1 = robot[0]
+    x2 = end[0]
+    y1 = robot[1]
+    y2 = end[1]
+    theta1 = robot[2]
+    theta2 = end[2]
+    #go Straight for x2 - x1 + 3
+    robot[0] = robot[0] + x2 - x1 + 3
+    #turn left
+    turnLeft(robot)
+    #go Straight for y2 - y1 + 3
+    robot[1] = robot[1] + y2 - y1 + 3 
+    #turn left
+    turnLeft(robot)
+    #go Straight for x2 - x1 + 3
+    robot[0] = robot[0] + x2 - x1 + 3
+    #turn left
+    turnLeft(robot)
+
+def mov21(robot,end):
+    x1 = robot[0]
+    x2 = end[0]
+    y1 = robot[1]
+    y2 = end[1]
+    theta1 = robot[2]
+    theta2 = end[2]
+    #go Straight for x1 - x2 + 5
+    robot[0] = robot[0] + x1 - x2 + 5
+    #turn left
+    turnLeft(robot)
+    #go Straight for y1 - y2 + 1
+    robot[1] = robot[1] + y1 - y2 + 1
+    #turn left
+    turnLeft(robot)
+
 def move(robot,end):
     x1 = robot[0]
     x2 = end[0]
@@ -270,7 +349,7 @@ def move(robot,end):
     theta2 = end[2]
     print('Origin',robot)
     if y2>y1: #top 
-        if x2>x1: #right 
+        if x2 > x1 + robotSize: #right 
             print('Des is top right of robot')
             if theta2 == 1:
                 if theta1 == 0.5:
@@ -394,8 +473,71 @@ def move(robot,end):
                     #turn right
                     turnRight(robot)
                     mov8(robot,end)
-    elif y2<y1: #bottom 
-        if x2>x1: #right 
+        else: 
+            print('Des is top of robot')
+            if theta2 == 1:
+                if theta1 == 0.5:
+                    #turn left
+                    turnLeft(robot)
+                    mov17(robot,end)
+                elif theta1 == 0:
+                    #turn 180
+                    turn180(robot)
+                    mov17(robot,end)
+                elif theta1 == 1.5:
+                    #turn right
+                    turnRight(robot)
+                    mov17(robot,end)
+                else:
+                    mov17(robot,end)
+            elif theta2 == 1.5:
+                if theta1 == 0.5:
+                    mov18(robot,end)
+                elif theta1 == 0:
+                    #turn left
+                    turnLeft(robot)
+                    mov18(robot,end)
+                elif theta1 == 1.5:
+                    #turn 180
+                    turn180(robot)
+                    mov18(robot,end)
+                else:
+                    #turn right
+                    turnRight(robot)
+                    mov18(robot,end)
+            elif theta2 == 0:
+                if theta1 == 0.5:
+                    #turn right
+                    turnRight(robot)
+                    mov19(robot,end)
+                elif theta1 == 0:
+                    mov19(robot,end)
+                elif theta1 == 1.5:
+                    #turn left
+                    turnLeft(robot)
+                    mov19(robot,end)
+                else:
+                    #turn 180
+                    turn180(robot)
+                    mov19(robot,end)
+            else:
+                if theta1 == 0.5:
+                    #turn right
+                    turnRight(robot)
+                    mov20(robot,end)
+                elif theta1 == 0:
+                    mov20(robot,end)
+                elif theta1 == 1.5:
+                    #turn left
+                    turnLeft(robot)
+                    mov20(robot,end)
+                else:
+                    #turn 180
+                    turn180(robot)
+                    mov20(robot,end)
+            
+    elif y2<y1: #bottom  
+        if x2>x1 + robotSize: #right 
             print('Des is bottom right of robot')
             if theta2 == 1:
                 if theta1 == 0.5:
@@ -459,6 +601,68 @@ def move(robot,end):
                     mov12(robot,end)
         elif x2<x1: #left 
             print('Des is bottom left of robot')
+            if theta2 == 1:
+                if theta1 == 0.5:
+                    #turn left
+                    turnLeft(robot)
+                    mov13(robot,end)
+                elif theta1 == 0:
+                    #turn 180
+                    turn180(robot)
+                    mov13(robot,end)
+                elif theta1 == 1.5:
+                    #turn right
+                    turnRight(robot)
+                    mov13(robot,end)
+                else:
+                    mov13(robot,end)
+            elif theta2 == 1.5: 
+                if theta1 == 0.5:
+                     #turn 180
+                    turn180(robot)
+                    mov14(robot,end)
+                elif theta1 == 0:
+                   #turn right
+                    turnRight(robot)
+                    mov14(robot,end)
+                elif theta1 == 1.5:
+                    mov14(robot,end)
+                else:
+                    #turn left
+                    turnLeft(robot)
+                    mov14(robot,end)
+            elif theta2 == 0: 
+                if theta1 == 0.5:
+                     #turn 180
+                    turn180(robot)
+                    mov15(robot,end)
+                elif theta1 == 0:
+                   #turn right
+                    turnRight(robot)
+                    mov15(robot,end)
+                elif theta1 == 1.5:
+                    mov15(robot,end)
+                else:
+                    #turn left
+                    turnLeft(robot)
+                    mov15(robot,end)
+            else: 
+                if theta1 == 0.5:
+                    #turn left
+                    turnLeft(robot)
+                    mov16(robot,end)
+                elif theta1 == 0:
+                    #turn 180
+                    turn180(robot)
+                    mov16(robot,end)
+                elif theta1 == 1.5:
+                    #turn right
+                    turnRight(robot)
+                    mov16(robot,end)
+                else:
+                    mov16(robot,end)
+        else:############
+            print('Des is bottom of the robot')
             if theta2 == 1:
                 if theta1 == 0.5:
                     #turn left
