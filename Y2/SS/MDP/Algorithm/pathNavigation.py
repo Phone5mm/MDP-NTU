@@ -835,7 +835,7 @@ def move(robot,end):
                     turnRight(robot)
                     mov4(robot,end)
         elif x2<x1: #left 
-            print('Des is top left of robot')
+            print('Des is middle left of robot')
             if theta2 == 1:
                 if theta1 == 0.5:
                     #turn left
