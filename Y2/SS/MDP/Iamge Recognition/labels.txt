@@ -1,0 +1,16 @@
+blue_6
+blue_down
+blue_y
+green_7
+green_circle
+green_w
+red_8
+red_left
+red_v
+white_9
+white_up
+white_x
+yellow_0
+yellow_right 
+yellow_z
+bulls_eye
