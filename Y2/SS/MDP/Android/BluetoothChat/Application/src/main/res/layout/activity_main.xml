@@ -1,0 +1,190 @@
+<!--
+  Copyright 2013 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/sample_main_layout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/textViewInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:layout_centerHorizontal="true" />
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/autoManual"
+            android:layout_alignParentEnd="true"
+            android:textOff="Manual"
+            android:textOn="Auto"/>
+    </RelativeLayout>
+
+    <!--Map-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/constraintLayOut">
+
+        <TableLayout
+            android:id="@+id/mapLayout"
+            android:layout_width="560dp"
+            android:layout_height="560dp"
+            android:stretchColumns="*"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </TableLayout>
+
+        <!--Robot-->
+        <ImageView
+            android:layout_width="72px"
+            android:layout_height="72px"
+            android:src="@drawable/ic_action_name"
+            android:rotation="180"
+            android:visibility="visible"
+            android:id="@+id/robotImage"
+            app:layout_constraintLeft_toLeftOf="@+id/mapLayout"
+            app:layout_constraintBottom_toBottomOf="@+id/mapLayout"
+            android:layout_marginLeft="35px"
+            android:layout_marginBottom="26px"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--Button-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <!--Navigate Button-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/navLayout">
+            <Button
+                android:id="@+id/buttonUp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="Up"
+                android:textSize="20sp"
+                android:layout_centerHorizontal="true"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/buttonUp"
+                >
+
+                <Button
+                    android:id="@+id/buttonLeft"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Left"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/buttonDown"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Down"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/buttonRight"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="Right"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Cam"
+            android:layout_toLeftOf="@+id/orsLayout"
+            android:id="@+id/buttonCam"/>
+
+        <!--O,R,Start Button-->=
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/orsLayout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <Button
+                    android:id="@+id/buttonObs"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="O"
+                    android:textSize="20sp" />
+                <Button
+                    android:id="@+id/buttonRobot"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="R"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:id="@+id/buttonStart"
+                android:text="Start"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageResult"
+        android:textSize="25px"/>
+
+    <FrameLayout
+          android:id="@+id/sample_content_fragment"
+          android:layout_weight="2"
+          android:layout_width="match_parent"
+          android:layout_height="0px" />
+
+</LinearLayout>
+

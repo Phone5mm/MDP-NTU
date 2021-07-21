@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\menu_bluetooth_chat.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\menu\\bluetooth_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_popup.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\layout\\popup.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_action_name.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_action_name.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_device_name.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\layout\\device_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_obs.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable\\obs.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_action_name.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_action_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_action_device_access_bluetooth_searching.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_action_device_access_bluetooth_searching.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\menu_main.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_tile.9.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-hdpi\\tile.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_fragment_bluetooth_chat.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\layout\\fragment_bluetooth_chat.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_name.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-xhdpi\\ic_action_name.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_action_name.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-mdpi\\ic_action_name.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_message.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\layout\\message.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_action_name.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_action_name.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_device_access_bluetooth_searching.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-xhdpi\\ic_action_device_access_bluetooth_searching.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_name.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-hdpi\\ic_action_name.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_action_device_access_bluetooth_searching.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-mdpi\\ic_action_device_access_bluetooth_searching.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_action_name.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_action_name.png"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_activity_device_list.xml.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\layout\\activity_device_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_device_access_bluetooth_searching.png.flat",
+        "source": "C:\\Users\\Jesline\\Downloads\\MDP-master\\Android\\BluetoothChat\\Application\\src\\main\\res\\drawable-hdpi\\ic_action_device_access_bluetooth_searching.png"
+    }
+]
