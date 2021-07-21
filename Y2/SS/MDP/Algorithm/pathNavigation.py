@@ -151,7 +151,7 @@ def mov9(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go straight for y1 - y2 + 1
-    robot[1] = robot[1] + y1 - y2 + 1
+    robot[1] = robot[1] - (y1 - y2 + 1)
     #turn left
     turnLeft(robot)
     #go straight for x2 - x1 - 5
@@ -165,7 +165,7 @@ def mov10(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go straight for y1 - y2 + 5
-    robot[1] = robot[1] + y1 - y2 + 5
+    robot[1] = robot[1] - (y1 - y2 + 5)
     #turn left
     turnLeft(robot)
     #go straight for x2 - x1 - 1
@@ -185,7 +185,7 @@ def mov11(robot,end):
     #turn right
     turnRight(robot)
     #go straight for y1 - y2 + 1
-    robot[1] = robot[1] +  y1 - y2 + 1
+    robot[1] = robot[1] -  (y1 - y2 + 1)
     #turn right
     turnRight(robot)
     
@@ -201,7 +201,7 @@ def mov12(robot,end):
     #turn right
     turnRight(robot)
     #go straight for y1 - y2 - 3 
-    robot[1] = robot[1] + y1 - y2 - 3 
+    robot[1] = robot[1] - (y1 - y2 - 3) 
 
 def mov13(robot,end):
     x1 = robot[0]
@@ -211,11 +211,11 @@ def mov13(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go straight for x1 - x2 + 5
-    robot[0] = robot[0] + x1 - x2 + 5
+    robot[0] = robot[0] - (x1 - x2 + 5)
     #turn left
     turnLeft(robot)
     #go straight for y1 - y2 + 1
-    robot[1] = robot[1] +  y1 - y2 + 1
+    robot[1] = robot[1] -  (y1 - y2 + 1)
     #turn left
     turnLeft(robot)
 
@@ -227,11 +227,11 @@ def mov14(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go straight for y1 - y2 + 5
-    robot[1] = robot[1] + y1 - y2 + 5
+    robot[1] = robot[1] - (y1 - y2 + 5)
     #turn right
     turnRight(robot)
     #go straight for x1 - x2 + 1
-    robot[0] = robot[0] + x1 - x2 + 1
+    robot[0] = robot[0] - (x1 - x2 + 1)
     #turn right
     turnRight(robot)
 
@@ -243,11 +243,11 @@ def mov15(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go straight for y1 - y2 + 1
-    robot[1] = robot[1] + y1 - y2 + 1
+    robot[1] = robot[1] - (y1 - y2 + 1)
     #turn right
     turnRight(robot)
     #go straight for x1 - x2 - 3
-    robot[0] = robot[0] + x1 - x2 - 3
+    robot[0] = robot[0] - (x1 - x2 - 3)
 
 def mov16(robot,end):
     x1 = robot[0]
@@ -257,11 +257,11 @@ def mov16(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go straight for x1 - x2 + 1
-    robot[0] = robot[0] + x1 - x2 + 1
+    robot[0] = robot[0] - (x1 - x2 + 1)
     #turn left
     turnLeft(robot)
     #go straight for y1 - y2 - 3
-    robot[1] = robot[1] +  y1 - y2 - 3
+    robot[1] = robot[1] -  (y1 - y2 - 3)
 
 def mov17(robot,end):
     x1 = robot[0]
@@ -271,7 +271,7 @@ def mov17(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go straight for x1 - x2 + 5
-    robot[0] = robot[0] + x1 - x2 + 5
+    robot[0] = robot[0] - (x1 - x2 + 5)
     #turn right
     turnRight(robot)
     #go Straight for y2 - y1 - 1
@@ -312,16 +312,16 @@ def mov20(robot,end):
     y2 = end[1]
     theta1 = robot[2]
     theta2 = end[2]
-    #go Straight for x2 - x1 + 3
-    robot[0] = robot[0] + x2 - x1 + 3
+    #go Straight for x2 - x1 + 2
+    robot[0] = robot[0] + x2 - x1 + 2
     #turn left
     turnLeft(robot)
     #go Straight for y2 - y1 + 3
     robot[1] = robot[1] + y2 - y1 + 3 
     #turn left
     turnLeft(robot)
-    #go Straight for x2 - x1 + 3
-    robot[0] = robot[0] + x2 - x1 + 3
+    #go Straight for x2 - x1 + 2
+    robot[0] = robot[0] - (x2 - x1 + 2)
     #turn left
     turnLeft(robot)
 
@@ -333,11 +333,11 @@ def mov21(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go Straight for x1 - x2 + 5
-    robot[0] = robot[0] + x1 - x2 + 5
+    robot[0] = robot[0] - (x1 - x2 + 5)
     #turn left
     turnLeft(robot)
     #go Straight for y1 - y2 + 1
-    robot[1] = robot[1] + y1 - y2 + 1
+    robot[1] = robot[1] - (y1 - y2 + 1)
     #turn left
     turnLeft(robot)
 
@@ -349,11 +349,11 @@ def mov22(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go Straight for x1 - x2 + 5
-    robot[0] = robot[0] + x1 - x2 + 5
+    robot[0] = robot[0] - (x1 - x2 + 5)
     #turn left
     turnLeft(robot)
     #go Straight for y1 - y2 + 5
-    robot[1] = robot[1] + y1 - y2 + 5
+    robot[1] = robot[1] - (y1 - y2 + 5)
     #turn left
     turnLeft(robot)
     #go Straight for x1 - x2 + 5
@@ -373,7 +373,7 @@ def mov23(robot,end):
     #turn right
     turnRight(robot)
     #go Straight for y1 - y2 + 1
-    robot[1] = robot[1] + y1 - y2 + 1
+    robot[1] = robot[1] - (y1 - y2 + 1)
     #turn right
     turnRight(robot)
 
@@ -385,7 +385,7 @@ def mov24(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go Straight for y1 - y2 - 3
-    robot[1] = robot[1] + y1 - y2 - 3
+    robot[1] = robot[1] - (y1 - y2 - 3)
 
 def mov25(robot,end):
     x1 = robot[0]
