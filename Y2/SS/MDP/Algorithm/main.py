@@ -3,7 +3,7 @@ from pathNavigation import move
 
 if __name__ == "__main__":
     
-    robot = [0,0,0.5]
+    robot = [0,0,0]
     #Five obstacles and origin get from android
     obstacle_android = [[3,5,0],[3,9,0],[6,3,0],[15,10,0],[10,5,0]]
     hamiltonianPath = shortestPath(obstacle_android)
