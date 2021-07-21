@@ -32,11 +32,13 @@ def mov1(robot,end):
     theta1 = robot[2]
     theta2 = end[2]
     #go straight for y2 - y1 - 1
-    robot[1] = robot[1] + y2 - y1 - 1
+    for i in range(y2-y1-1):
+        robot[1] = robot[1] + 1
     #turn right
     turnRight(robot)
     #go straight for x2 - x1 - 5
-    robot[0] = robot[0] +  x2 - x1 - 5
+    for i in range(x2 - x1 - 5):
+        robot[0] = robot[0] + 1
 
 def mov2(robot,end):
     x1 = robot[0]
