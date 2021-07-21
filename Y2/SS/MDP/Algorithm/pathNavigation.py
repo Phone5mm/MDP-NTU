@@ -2,26 +2,26 @@ robotSize = 2
 
 def turnRight(robot):
     #turn right
-    if robot[2] == 0:
-        robot[2] = 1.5
-    else:
-        robot[2] = robot[2] -0.5
-        
-def turnLeft(robot):
-    #turn left
-    if robot[2] == 1.5:
-        robot[2] = 0
-    else:
-        robot[2] = robot[2] +0.5
-        
-def turn180(robot):
-    #turn 180
-    if robot[2] == 1.5:
-        robot[2] = 0.5
-    elif robot[2] == 1:
+    if robot[2] == 3:
         robot[2] = 0
     else:
         robot[2] = robot[2] + 1
+        
+def turnLeft(robot):
+    #turn left
+    if robot[2] == 0:
+        robot[2] = 3
+    else:
+        robot[2] = robot[2] - 1
+        
+def turn180(robot):
+    #turn 180
+    if robot[2] == 2:
+        robot[2] = 0
+    elif robot[2] == 3:
+        robot[2] = 1
+    else:
+        robot[2] = robot[2] + 2
         
 def mov1(robot,end):
     x1 = robot[0]
